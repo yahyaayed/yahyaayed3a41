@@ -60,7 +60,7 @@ class AuthorController extends AbstractController
 
     public function Affiche (AuthorRepository $repository)
         {
-            $author=$repository->findAll() ; //select *
+            $author=$repository->findAll() ; 
             return $this->render('author/Affiche.html.twig',['author'=>$author]);
         }
 
