@@ -92,7 +92,7 @@ public function  Add (Request  $request)
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->flush(); // Correction : Utilisez la méthode flush() sur l'EntityManager pour enregistrer les modifications en base de données.
+            $em->flush(); 
             return $this->redirectToRoute("app_Affiche");
         }
 
@@ -121,10 +121,8 @@ public function  Add (Request  $request)
     {
         // Créez une instance de l'entité Author
         $author1 = new Author();
-        $author1->setUsername("test"); // Utilisez "setUsername" pour définir le nom d'utilisateur
-        $author1->setEmail("test@gmail.com"); // Utilisez "setEmail" pour définir l'email
-
-        // Enregistrez l'entité dans la base de données
+        $author1->setUsername("test"); 
+        $author1->setEmail("test@gmail.com"); 
         $entityManager->persist($author1);
         $entityManager->flush();
 
